@@ -26,6 +26,7 @@ body {
 	/*background-position: center;*/ /* Center the background image */
 	background-attachment: fixed; /* Don't scroll. */
 	background-image: linear-gradient( rgba( 0, 0, 0, 0.7 ), rgba( 0, 0, 0, 0.7 ) ), url( ../img/bg1.jpg );
+	position: relative;
 }
 
 .gameplay {
@@ -60,5 +61,9 @@ a:active {
 }
 
 footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
 	text-align: center;
 }
