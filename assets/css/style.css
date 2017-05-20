@@ -30,13 +30,25 @@ body {
 }
 
 .gameplay {
-
+	width: 1140px;
+	height: 400px;
+	position: absolute;
+	top: 50%; /*Vertically aligns the top of this div with the center of its parent div*/
+	left: 50%; /*Horizontally aligns the left side of this dive with the center of its parent div*/
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%); /*Shifts the div so that its horizontal and vertical centers are what align with its parent div's center*/
+    background-color: #555;
 }
 
 h1 {
 	margin-left: 50px;
 	font-weight: 300;
 	font-size: 65px;
+}
+
+h2 {
+	font-size: 30px;
+	font-weight: 300;
 }
 
 h3 {
