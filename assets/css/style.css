@@ -12,6 +12,7 @@ BASIC SETUP
 html,
 body {
 	font-family: 'Signika', 'Arial', sans-serif;
+	color: #fff;
 	/*font-family: 'Lato', 'Arial', sans-serif;*/
 	font-weight: 300;
 	font-size: 20px;
@@ -27,9 +28,37 @@ body {
 	background-image: linear-gradient( rgba( 0, 0, 0, 0.7 ), rgba( 0, 0, 0, 0.7 ) ), url( ../img/bg1.jpg );
 }
 
+.gameplay {
+
+}
+
 h1 {
-	color: #fff;
 	margin-left: 50px;
 	font-weight: 300;
 	font-size: 65px;
+}
+
+h3 {
+	font-size: 15px;
+	font-weight: 300;
+}
+
+a:link,
+a:visited {
+	color: #fff;
+	text-decoration: none; /* No default underline */
+	border-bottom: 1px solid #fff; /* Our own custom underline */
+	/*padding-bottom: 1px;*/ /* Space for underline */
+	-webkit-transition: border-bottom 0.2s, color 0.2s;
+	transition: border-bottom 0.2s, color 0.2s; /* Transition takes 0.2 seconds. */
+}
+
+a:hover,
+a:active {
+	color: #c0c0c0;
+	border-bottom: 1px solid transparent;
+}
+
+footer {
+	text-align: center;
 }
