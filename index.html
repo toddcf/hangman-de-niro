@@ -48,17 +48,17 @@
 				<div></div> <!-- BLANKS -->
 
 				<div><h2>Type a Letter to Guess the Robert De Niro Movie Title</h2></div>
-				<div><h2>Incorrect Letters Guessed: <span></span></h2></div>
-				<div><h2>Remaining Guesses: <span></span></h2></div>
-				<div><h2>Wins: <span></span></h2></div>
-				<div><h2>Losses: <span></span></h2></div>
+				<div><h2>Incorrect Letters Guessed: <span id="wrongLetters"></span></h2></div>
+				<div><h2>Remaining Guesses: <span id="guessesLeft"></span></h2></div>
+				<div><h2>Wins: <span id="winCounter"></span></h2></div>
+				<div><h2>Losses: <span id="lossCounter"></span></h2></div>
 				
 			</div>
 
 			<footer>
 
 				<div class="col span-1-of-2">
-					<h3>Copyright &copy; 2016<span></span> <a href="http://www.tcf-webdesign.com" target="_blank">Todd Croak-Falen</a></h3>
+					<h3>Copyright &copy; 2016<span class="currentYear"></span> <a href="http://www.tcf-webdesign.com" target="_blank">Todd Croak-Falen</a></h3>
 				</div>
 
 				<div class="col span-1-of-2">
@@ -70,4 +70,11 @@
 		</section>
 
 	</body>
+
+	<!-- Link to jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- JavaScript Link -->
+	<script src="assets/js/game.js" type="text/javascript"></script>
+	
 </html>
