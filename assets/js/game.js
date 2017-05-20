@@ -1,4 +1,11 @@
+$( document ).ready( function() {
 
+	// Pass current year into footer copyright:
+	var thisYear = new Date().getFullYear();
 
-var now = new Date();
-var year = now.getFullYear();
+	// Footer (IIFE):
+	var footerInfo = ( function() {
+		$( ".currentYear" ).html( " &ndash; " + thisYear + " " );
+	}) ();
+	
+});
