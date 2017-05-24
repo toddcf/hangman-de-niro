@@ -9,13 +9,21 @@ $( document ).ready( function() {
 	}) ();
 
 	var titles = [
+		// "AWAKENINGS",
+		// "BACKDRAFT",
+		// "CAPE FEAR",
 		// "CASINO",
 		// "GOODFELLAS",
 		// "HEAT",
+		// "RAGING BULL",
 		// "RONIN",
 		// "SLEEPERS",
+		// "TAXI DRIVER",
+		// "THE DEER HUNTER",
 		// "THE FAN",
-		"THE GODFATHER: PART II"
+		// "THE GODFATHER: PART II",
+		// "THE UNTOUCHABLES",
+		"THIS BOY'S LIFE"
 	];
 
 	var winCounter = 0;
@@ -49,6 +57,10 @@ $( document ).ready( function() {
 			// Push colon:
 			else if ( letters[ i ] === ":" ) {
 				blanks.push( ":" );
+			}
+			// Push apostrophe:
+			else if ( letters[ i ] === "'" ) {
+				blanks.push( "\'" );
 			}
 			else {
 				blanks.push( "_" );
