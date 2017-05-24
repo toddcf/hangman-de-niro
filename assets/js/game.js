@@ -37,11 +37,12 @@ $( document ).ready( function() {
 
 	var winCounter = 0;
 	var lossCounter = 0;
-	var blanks = [];
-	var letters = [];
-	var lettersGuessed = [];
+	var blanks = []; /* An array to store the blanks in. */
+	var letters = []; /* The selectedTitle, split into individual letters and stored in an array. */
+	var wrongLetters = [];
 	var guessesLeft = 9;
 	var active = false;
+	var numBlanks;
 
 	// Function that starts or restarts the game.
 	var play = function() {
@@ -50,8 +51,10 @@ $( document ).ready( function() {
 
 		// Display BLANKS div.
 
-		// Set game to active:
+		// Set game to active and reset certain stats:
 		active = true;
+		guessesLeft = 9;
+		wrongLetters = [];
 
 		// Randomly Select Title:
 		selectedTitle = titles[ Math.floor( Math.random() * titles.length ) ];
@@ -61,7 +64,7 @@ $( document ).ready( function() {
 		console.log( "Letters: " + letters );
 		console.log( letters[ i ] );
 		// Count number of blanks in selected title:
-		var numBlanks = selectedTitle.length;
+		numBlanks = selectedTitle.length;
 		console.log( "Number of Blanks: " + numBlanks );
 		// Push blanks to blanks array:
 		for ( var i = 0; i < letters.length; i++ ) {
@@ -87,27 +90,63 @@ $( document ).ready( function() {
 		document.getElementById( "winDisplay" ).innerHTML = winCounter;
 		document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
 		document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
+		document.getElementById( "wrongLetters" ).innerHTML = wrongLetters;
 
 	}
 
-	var checkWin = function() {
-		if ( lossCounter > 0 ) {
-			// continue playing
+	var checkLetters = function( letter ) {
+
+		var correctLetter = false;
+
+		for ( var i = 0; i < letters.length; i++ ) {
+			if ( letters[ i ] == letter ) {
+				correctLetter = true;
+				console.log( "correctLetter = true");
+			}
+		}
+
+		if ( correctLetter ) {
+			for ( var i = 0; i < letters.length; i++ ) {
+				if ( letters[ i ] = letter ) {
+					blanks[ i ] = letter;
+				}
+			}
 		}
 		else {
-			lose();
+			wrongLetters.push( letter );
+			guessesLeft--;
+			console.log( "Guesses Left: " + guessesLeft );
+			// document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
 		}
+		// document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
+
 	}
 
 	var win = function() {
 		active = false;
-		confirm("You got it! Congratulations! Would you like to play another round?");
+		winCounter++;
+		document.getElementById( "winDisplay" ).innerHTML = winCounter;
+		confirm( "You got it! Congratulations! Would you like to play another round?" );
 	}
 
 	var lose = function() {
 		active = false;
-		confirm("Sorry, you're out of guesses. Would you like to play again?");
+		lossCounter++;
+		document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
+		confirm( "Sorry, you're out of guesses. Would you like to play again?" );
 	}
+
+	// var checkWin = function() {
+	// 	if ( guessesLeft == 0 ) {
+	// 		lose();
+	// 	}
+	// 	else if ( ( guessesLeft >= 0 ) && ( ALL CORRECT LETTERS GUESSED ) ) {
+	// 		win();
+	// 	}
+	// 	else {
+	// 		// Continue playing.
+	// 	}
+	// }
 
 	// Start Game onClick:
 	play();
@@ -120,6 +159,10 @@ $( document ).ready( function() {
 			// Make uppercase:
 			var userGuess = String.fromCharCode( event.keyCode ).toUpperCase();
 			console.log( "userGuess: " + userGuess );
+
+			// Check if userGuess was correct.
+			checkLetters( userGuess );
+
 		}
 	
 	// checkLetters(userGuess);
