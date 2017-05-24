@@ -9,16 +9,18 @@ $( document ).ready( function() {
 	}) ();
 
 	var titles = [
-		"GOODFELLAS",
-		"HEAT",
-		"CASINO",
-		"SLEEPERS",
-		"RONIN"
+		"THE FAN"
+		// "GOODFELLAS",
+		// "HEAT",
+		// "CASINO",
+		// "SLEEPERS",
+		// "RONIN"
 	];
 
 	var winCounter = 0;
 	var lossCounter = 0;
 	var blanks = [];
+	var letters = [];
 	var lettersGuessed = [];
 	var guessesLeft = 9;
 
@@ -29,13 +31,14 @@ $( document ).ready( function() {
 
 		// Randomly Select Title:
 		selectedTitle = titles[ Math.floor( Math.random() * titles.length ) ];
-		console.log( selectedTitle );
+		console.log( "Selected Title: " + selectedTitle );
 		// Split selectedTitle into individual letters:
 		letters = selectedTitle.split( "" );
-		console.log( letters );
+		console.log( "Letters: " + letters );
+		console.log( letters[ 3 ] );
 		// Count number of blanks in selected title:
 		var numBlanks = selectedTitle.length;
-		console.log( numBlanks );
+		console.log( "Number of Blanks: " + numBlanks );
 		// Push blanks to blanks array:
 		for ( var i = 0; i < letters.length; i++ ) {
 			// Push spaces:
