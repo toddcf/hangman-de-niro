@@ -48,6 +48,8 @@ $( document ).ready( function() {
 
 		// Hide Start Button
 
+		// Display BLANKS div.
+
 		// Set game to active:
 		active = true;
 
@@ -57,7 +59,7 @@ $( document ).ready( function() {
 		// Split selectedTitle into individual letters:
 		letters = selectedTitle.split( "" );
 		console.log( "Letters: " + letters );
-		console.log( letters[ 3 ] );
+		console.log( letters[ i ] );
 		// Count number of blanks in selected title:
 		var numBlanks = selectedTitle.length;
 		console.log( "Number of Blanks: " + numBlanks );
@@ -98,18 +100,32 @@ $( document ).ready( function() {
 	}
 
 	var win = function() {
-
+		active = false;
+		confirm("You got it! Congratulations! Would you like to play another round?");
 	}
 
 	var lose = function() {
-		confirm("Sorry, you're out of guesses. Would you like to play again?");
 		active = false;
+		confirm("Sorry, you're out of guesses. Would you like to play again?");
 	}
 
 	// Start Game onClick:
 	play();
 
+	// Captures Key Clicks
+	document.onkeyup = function( event ) {
 
+		// Alphabet keys only:
+		if ( ( event.keyCode >= 65 ) && ( event.keyCode <= 90 ) ) {
+			// Make uppercase:
+			var userGuess = String.fromCharCode( event.keyCode ).toUpperCase();
+			console.log( "userGuess: " + userGuess );
+		}
+	
+	// checkLetters(userGuess);
+	// roundComplete();
+
+	}
 
 
 
