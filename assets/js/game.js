@@ -43,7 +43,7 @@ $( document ).ready( function() {
 		for ( var i = 0; i < letters.length; i++ ) {
 			// Push spaces:
 			if ( letters[ i ] === " " ) {
-				blanks.push( " ");
+				blanks.push( "&nbsp;");
 			}
 			else {
 				blanks.push( "_" );

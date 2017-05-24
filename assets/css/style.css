@@ -56,6 +56,10 @@ h3 {
 	font-weight: 300;
 }
 
+#blanks {
+	letter-spacing: 7px;
+}
+
 a:link,
 a:visited {
 	color: #fff;
