@@ -41,11 +41,15 @@ $( document ).ready( function() {
 	var letters = [];
 	var lettersGuessed = [];
 	var guessesLeft = 9;
+	var active = false;
 
 	// Function that starts or restarts the game.
 	var play = function() {
 
 		// Hide Start Button
+
+		// Set game to active:
+		active = true;
 
 		// Randomly Select Title:
 		selectedTitle = titles[ Math.floor( Math.random() * titles.length ) ];
@@ -78,8 +82,28 @@ $( document ).ready( function() {
 
 		// Print to HTML:
 		document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
+		document.getElementById( "winDisplay" ).innerHTML = winCounter;
+		document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
+		document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
 
+	}
 
+	var checkWin = function() {
+		if ( lossCounter > 0 ) {
+			// continue playing
+		}
+		else {
+			lose();
+		}
+	}
+
+	var win = function() {
+
+	}
+
+	var lose = function() {
+		confirm("Sorry, you're out of guesses. Would you like to play again?");
+		active = false;
 	}
 
 	// Start Game onClick:
@@ -92,12 +116,6 @@ $( document ).ready( function() {
 
 
 
-	// One way to add spaces:
-	// if (word[i] === " ") {
- //                guess.innerHTML = " ";
- //                space = 1;
- //            } else {
- //                guess.innerHTML = "_";
- //            }
+	
 	
 });
