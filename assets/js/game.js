@@ -9,12 +9,13 @@ $( document ).ready( function() {
 	}) ();
 
 	var titles = [
-		"THE FAN"
+		// "CASINO",
 		// "GOODFELLAS",
 		// "HEAT",
-		// "CASINO",
+		// "RONIN",
 		// "SLEEPERS",
-		// "RONIN"
+		// "THE FAN",
+		"THE GODFATHER: PART II"
 	];
 
 	var winCounter = 0;
@@ -44,6 +45,10 @@ $( document ).ready( function() {
 			// Push spaces:
 			if ( letters[ i ] === " " ) {
 				blanks.push( "&nbsp;");
+			}
+			// Push colon:
+			else if ( letters[ i ] === ":" ) {
+				blanks.push( ":" );
 			}
 			else {
 				blanks.push( "_" );
