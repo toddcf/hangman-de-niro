@@ -9,21 +9,30 @@ $( document ).ready( function() {
 	}) ();
 
 	var titles = [
-		// "AWAKENINGS",
-		// "BACKDRAFT",
-		// "CAPE FEAR",
-		// "CASINO",
-		// "GOODFELLAS",
-		// "HEAT",
-		// "RAGING BULL",
-		// "RONIN",
-		// "SLEEPERS",
-		// "TAXI DRIVER",
-		// "THE DEER HUNTER",
-		// "THE FAN",
-		// "THE GODFATHER: PART II",
-		// "THE UNTOUCHABLES",
-		"THIS BOY'S LIFE"
+		"ANALYZE THIS",
+		"ANALYZE THAT",
+		"AWAKENINGS",
+		"BACKDRAFT",
+		"CAPE FEAR",
+		"CASINO",
+		"COP LAND",
+		"GOODFELLAS",
+		"GREAT EXPECTATIONS",
+		"HEAT",
+		"JACKIE BROWN",
+		"MEET THE PARENTS",
+		"RAGING BULL",
+		"RONIN",
+		"SLEEPERS",
+		"TAXI DRIVER",
+		"THE DEER HUNTER",
+		"THE FAN",
+		"THE GODFATHER: PART II",
+		"THE INTERN",
+		"THE SCORE",
+		"THE UNTOUCHABLES",
+		"THIS BOY'S LIFE",
+		"WHAT JUST HAPPENED"
 	];
 
 	var winCounter = 0;
