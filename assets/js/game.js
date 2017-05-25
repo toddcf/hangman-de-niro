@@ -101,7 +101,7 @@ $( document ).ready( function() {
 		for ( var i = 0; i < letters.length; i++ ) {
 			if ( letters[ i ] == letter ) {
 				correctLetter = true;
-				console.log( "correctLetter = true");
+				console.log( "correctLetter = " + correctLetter );
 			}
 		}
 
@@ -115,6 +115,7 @@ $( document ).ready( function() {
 		else {
 			wrongLetters.push( letter );
 			guessesLeft--;
+			console.log( "correctLetter = " + correctLetter );
 			console.log( "Guesses Left: " + guessesLeft );
 			// document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
 		}
