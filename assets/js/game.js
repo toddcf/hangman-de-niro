@@ -42,7 +42,7 @@ $( document ).ready( function() {
 	var wrongLetters = [];
 	var guessesLeft = 9;
 	var active = false;
-	var numBlanks;
+	var numBlanks = 0;
 
 	// Function that starts or restarts the game.
 	var play = function() {
@@ -62,7 +62,7 @@ $( document ).ready( function() {
 		// Split selectedTitle into individual letters:
 		letters = selectedTitle.split( "" );
 		console.log( "Letters: " + letters );
-		console.log( letters[ i ] );
+		// console.log( letters[ i ] );
 		// Count number of blanks in selected title:
 		numBlanks = selectedTitle.length;
 		console.log( "Number of Blanks: " + numBlanks );
@@ -101,7 +101,7 @@ $( document ).ready( function() {
 		for ( var i = 0; i < letters.length; i++ ) {
 			if ( letters[ i ] == letter ) {
 				correctLetter = true;
-				console.log( "correctLetter = " + correctLetter );
+				console.log( "correctLetter = " + correctLetter + ": "+ letter );
 			}
 		}
 
@@ -112,13 +112,13 @@ $( document ).ready( function() {
 				}
 			}
 		}
-		else {
-			wrongLetters.push( letter );
-			guessesLeft--;
-			console.log( "correctLetter = " + correctLetter );
-			console.log( "Guesses Left: " + guessesLeft );
-			// document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
-		}
+		// else {
+		// 	wrongLetters.push( letter );
+		// 	guessesLeft--;
+		// 	console.log( "correctLetter = " + correctLetter );
+		// 	console.log( "Guesses Left: " + guessesLeft );
+		// 	// document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
+		// }
 		// document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
 
 	}
@@ -155,11 +155,11 @@ $( document ).ready( function() {
 	// Captures Key Clicks
 	document.onkeyup = function( event ) {
 
-		// Alphabet keys only:
-		if ( ( event.keyCode >= 65 ) && ( event.keyCode <= 90 ) ) {
+		// Alphabet keys only, and only if game is active:
+		if ( ( event.keyCode >= 65 ) && ( event.keyCode <= 90 ) && ( active ) ) {
 			// Make uppercase:
 			var userGuess = String.fromCharCode( event.keyCode ).toUpperCase();
-			console.log( "userGuess: " + userGuess );
+			// console.log( "userGuess: " + userGuess );
 
 			// Check if userGuess was correct.
 			checkLetters( userGuess );

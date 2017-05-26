@@ -2,6 +2,7 @@
 
 ## Checklist
 
+- Debug: Only the first correct guess is marked correct; all following correct guesses are counted as incorrect.
 - Add favicon.
 - Add start button instead of automatically triggering the game upon loading page.
   - Hide start button when game begins.
