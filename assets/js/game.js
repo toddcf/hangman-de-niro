@@ -71,7 +71,7 @@ $( document ).ready( function() {
 		for ( var i = 0; i < letters.length; i++ ) {
 			// Push spaces:
 			if ( letters[ i ] === " " ) {
-				blanks.push( "&nbsp;");
+				blanks.push( "&nbsp;" );
 			}
 			// Push colon:
 			else if ( letters[ i ] === ":" ) {
@@ -136,10 +136,16 @@ $( document ).ready( function() {
 	};
 
 	var win = function() {
-		active = false;
 		winCounter++;
 		document.getElementById( "winDisplay" ).innerHTML = winCounter;
-		confirm( "You got it! Congratulations! Would you like to play another round?" );
+		active = false;
+		var won = confirm( "You got it! Congratulations! Would you like to play another round?" );
+		if ( won ) {
+			play();
+		}
+		else {
+			active = false;
+		}
 	};
 
 	var lose = function() {
@@ -159,9 +165,9 @@ $( document ).ready( function() {
 		if ( guessesLeft == 0 ) {
 			lose();
 		}
-		// else if ( ( guessesLeft >= 0 ) && ( ALL CORRECT LETTERS GUESSED ) ) {
-		// 	win();
-		// }
+		else if ( letters.toString() == blanks.toString() ) {
+			win();
+		}
 		// else {
 		// 	// Continue playing.
 		// }
