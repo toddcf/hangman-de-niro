@@ -96,10 +96,10 @@ $( document ).ready( function() {
 
 	var checkLetters = function( letter ) {
 
-		console.log( "1. The " + letter + " key has been pressed. Running checkLetters function. correctLetter is currently set to: " + correctLetter );
+		// console.log( "1. The " + letter + " key has been pressed. Running checkLetters function. correctLetter is currently set to: " + correctLetter );
 
 		var correctLetter = false;
-		console.log( "2. correctLetter variable has been declared and set to: " + correctLetter );
+		// console.log( "2. correctLetter variable has been declared and set to: " + correctLetter );
 
 		for ( var i = 0; i < letters.length; i++ ) {
 			// console.log( "3. Running for loop to see if letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + ")." );
@@ -109,27 +109,27 @@ $( document ).ready( function() {
 			}
 		}
 
-		console.log( "5. Initial for loop has finished. correctLetter is currently set to: " + correctLetter);
+		// console.log( "5. Initial for loop has finished. correctLetter is currently set to: " + correctLetter);
 
 		if ( correctLetter ) {
-			console.log( "6. Beginning second for loop because correctLetter is set to: " + correctLetter );
+			// console.log( "6. Beginning second for loop because correctLetter is set to: " + correctLetter );
 			for ( var i = 0; i < letters.length; i++ ) {
-				console.log( "7. Checking if letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + ")." );
-				if ( letters[ i ] == letter ) { /* THIS IS THE PROBLEM RIGHT HERE. */
-					console.log( "8. letters[ " + i + " ] (" + letters[ i ] + ") does in fact == letter (" + letter + "), so we are going to change blanks[ " + i + " ] (" + blanks[ i ] + ") to match that.");
+				// console.log( "7. Checking if letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + ")." );
+				if ( letters[ i ] == letter ) {
+					// console.log( "8. letters[ " + i + " ] (" + letters[ i ] + ") does in fact == letter (" + letter + "), so we are going to change blanks[ " + i + " ] (" + blanks[ i ] + ") to match that.");
 					blanks[ i ] = letter;
-					console.log( "9. blanks[ " + i + " ] (" + blanks[ i ] + ") is now set to: letter (" + letter + ")." );
+					// console.log( "9. blanks[ " + i + " ] (" + blanks[ i ] + ") is now set to: letter (" + letter + ")." );
 				}
 			}
 		}
-		// else {
-		// 	wrongLetters.push( letter );
-		// 	guessesLeft--;
-		// 	console.log( "correctLetter = " + correctLetter );
-		// 	console.log( "Guesses Left: " + guessesLeft );
-		// 	// document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
-		// }
-		// document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
+		else {
+			wrongLetters.push( letter );
+			guessesLeft--;
+			console.log( "correctLetter = " + correctLetter );
+			console.log( "Guesses Left: " + guessesLeft );
+			// document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
+		}
+		document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
 
 	};
 
