@@ -105,7 +105,7 @@ $( document ).ready( function() {
 			console.log( "3. Running for loop to see if letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + ")." );
 			if ( letters[ i ] == letter ) {
 				correctLetter = true;
-				console.log( "4. letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + "), so correctLetter has been set to: " + correctLetter + "." );
+				console.log( "4a. letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + "), so correctLetter has been set to: " + correctLetter + "." );
 			}
 		}
 
