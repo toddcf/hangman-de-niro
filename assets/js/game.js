@@ -134,31 +134,31 @@ $( document ).ready( function() {
 
 	};
 
-	// var win = function() {
-	// 	active = false;
-	// 	winCounter++;
-	// 	document.getElementById( "winDisplay" ).innerHTML = winCounter;
-	// 	confirm( "You got it! Congratulations! Would you like to play another round?" );
-	// }
+	var win = function() {
+		active = false;
+		winCounter++;
+		document.getElementById( "winDisplay" ).innerHTML = winCounter;
+		confirm( "You got it! Congratulations! Would you like to play another round?" );
+	}
 
-	// var lose = function() {
-	// 	active = false;
-	// 	lossCounter++;
-	// 	document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
-	// 	confirm( "Sorry, you're out of guesses. Would you like to play again?" );
-	// }
+	var lose = function() {
+		active = false;
+		lossCounter++;
+		document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
+		confirm( "Sorry, you're out of guesses. Would you like to play again?" );
+	}
 
-	// var checkWin = function() {
-	// 	if ( guessesLeft == 0 ) {
-	// 		lose();
-	// 	}
-	// 	else if ( ( guessesLeft >= 0 ) && ( ALL CORRECT LETTERS GUESSED ) ) {
-	// 		win();
-	// 	}
-	// 	else {
-	// 		// Continue playing.
-	// 	}
-	// }
+	var checkWin = function() {
+		if ( guessesLeft == 0 ) {
+			lose();
+		}
+		// else if ( ( guessesLeft >= 0 ) && ( ALL CORRECT LETTERS GUESSED ) ) {
+		// 	win();
+		// }
+		// else {
+		// 	// Continue playing.
+		// }
+	}
 
 	// Start Game onClick:
 	play();
@@ -175,9 +175,11 @@ $( document ).ready( function() {
 			// Check if userGuess was correct.
 			checkLetters( userGuess );
 
+			// Check if user won:
+			checkWin();
+
 		}
 	
-	// checkLetters(userGuess);
 	// roundComplete();
 
 	};
