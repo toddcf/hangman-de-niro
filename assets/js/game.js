@@ -55,6 +55,7 @@ $( document ).ready( function() {
 		active = true;
 		guessesLeft = 9;
 		wrongLetters = [];
+		blanks = [];
 
 		// Randomly Select Title:
 		selectedTitle = titles[ Math.floor( Math.random() * titles.length ) ];
@@ -139,14 +140,20 @@ $( document ).ready( function() {
 		winCounter++;
 		document.getElementById( "winDisplay" ).innerHTML = winCounter;
 		confirm( "You got it! Congratulations! Would you like to play another round?" );
-	}
+	};
 
 	var lose = function() {
-		active = false;
 		lossCounter++;
 		document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
-		confirm( "Sorry, you're out of guesses. Would you like to play again?" );
-	}
+		active = false;
+		var lost = confirm( "Sorry, you're out of guesses. Would you like to play again?" );
+		if ( lost ) {
+			play();
+		}
+		else {
+			active = false;
+		}
+	};
 
 	var checkWin = function() {
 		if ( guessesLeft == 0 ) {
