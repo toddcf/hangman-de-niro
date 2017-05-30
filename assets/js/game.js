@@ -92,21 +92,24 @@ $( document ).ready( function() {
 		document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
 		document.getElementById( "wrongLetters" ).innerHTML = wrongLetters;
 
-	}
+	};
 
 	var checkLetters = function( letter ) {
 
+		console.log( "1. The " + letter + " key has been pressed. Running checkLetters function. correctLetter is currently set to: " + correctLetter );
+
 		var correctLetter = false;
-		console.log( "1. correctLetter set to: " + correctLetter );
+		console.log( "2. correctLetter variable has been declared and set to: " + correctLetter );
 
 		for ( var i = 0; i < letters.length; i++ ) {
+			console.log( "3. Running for loop to see if letters[ i ] == letter." );
 			if ( letters[ i ] == letter ) {
 				correctLetter = true;
-				console.log( "2. correctLetter set to " + correctLetter + ": "+ letter );
+				console.log( "4. letters[ i ] (" + letters[ i ] + ") == letter (" + letter + ", so correctLetter has been set to " + correctLetter + "." );
 			}
 		}
 
-		console.log( "3. After correctLetter has been found during the initial for loop, correctLetter is set to: " + correctLetter);
+		console.log( "5. Initial for loop has finished. correctLetter is currently set to: " + correctLetter);
 
 		if ( correctLetter ) {
 			console.log( "4. Beginning second for loop because correctLetter is set to: " + correctLetter );
@@ -125,7 +128,7 @@ $( document ).ready( function() {
 		// }
 		// document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
 
-	}
+	};
 
 	// var win = function() {
 	// 	active = false;
@@ -173,7 +176,7 @@ $( document ).ready( function() {
 	// checkLetters(userGuess);
 	// roundComplete();
 
-	}
+	};
 
 
 
