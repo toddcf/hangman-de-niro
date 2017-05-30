@@ -9,30 +9,30 @@ $( document ).ready( function() {
 	}) ();
 
 	var titles = [
-		/*"ANALYZE THIS",
-		"ANALYZE THAT",
-		"AWAKENINGS",
-		"BACKDRAFT",
-		"CAPE FEAR",
-		"CASINO",
-		"COP LAND",
-		"GOODFELLAS",
-		"GREAT EXPECTATIONS",
-		"HEAT",
-		"JACKIE BROWN",
-		"MEET THE PARENTS",
-		"RAGING BULL",
-		"RONIN",*/
-		"SLEEPERS",
-		/*"TAXI DRIVER",
-		"THE DEER HUNTER",
-		"THE FAN",
-		"THE GODFATHER: PART II",
-		"THE INTERN",
-		"THE SCORE",
-		"THE UNTOUCHABLES",
-		"THIS BOY'S LIFE",
-		"WHAT JUST HAPPENED"*/
+		"ANALYZE THIS",
+		// "ANALYZE THAT",
+		// "AWAKENINGS",
+		// "BACKDRAFT",
+		// "CAPE FEAR",
+		// "CASINO",
+		// "COP LAND",
+		// "GOODFELLAS",
+		// "GREAT EXPECTATIONS",
+		// "HEAT",
+		// "JACKIE BROWN",
+		// "MEET THE PARENTS",
+		// "RAGING BULL",
+		// "RONIN",
+		// "SLEEPERS",
+		// "TAXI DRIVER",
+		// "THE DEER HUNTER",
+		// "THE FAN",
+		// "THE GODFATHER: PART II",
+		// "THE INTERN",
+		// "THE SCORE",
+		// "THE UNTOUCHABLES",
+		// "THIS BOY'S LIFE",
+		// "WHAT JUST HAPPENED"
 	];
 
 	var winCounter = 0;
@@ -42,7 +42,6 @@ $( document ).ready( function() {
 	var wrongLetters = [];
 	var guessesLeft = 9;
 	var active = false;
-	var numBlanks = 0;
 
 	// Function that starts or restarts the game.
 	var play = function() {
@@ -64,9 +63,8 @@ $( document ).ready( function() {
 		letters = selectedTitle.split( "" );
 		console.log( "Letters: " + letters );
 		// console.log( letters[ i ] );
-		// Count number of blanks in selected title:
-		numBlanks = selectedTitle.length;
-		console.log( "Number of Blanks: " + numBlanks );
+		
+		console.log( "Number of Blanks: " + selectedTitle.length );
 		// Push blanks to blanks array:
 		for ( var i = 0; i < letters.length; i++ ) {
 			// Push spaces:
@@ -136,41 +134,51 @@ $( document ).ready( function() {
 	};
 
 	var win = function() {
+		
 		winCounter++;
 		document.getElementById( "winDisplay" ).innerHTML = winCounter;
 		active = false;
 		var won = confirm( "You got it! Congratulations! Would you like to play another round?" );
+		
 		if ( won ) {
 			play();
 		}
 		else {
 			active = false;
 		}
+
 	};
 
 	var lose = function() {
+		
 		lossCounter++;
 		document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
 		active = false;
 		var lost = confirm( "Sorry, you're out of guesses. Would you like to play again?" );
+		
 		if ( lost ) {
 			play();
 		}
 		else {
 			active = false;
 		}
+
 	};
 
 	var checkWin = function() {
+
+		console.log( "letters.toString() = " + letters.toString() );
+		console.log( "blanks.toString() = " + blanks.toString() );
+		
 		if ( guessesLeft == 0 ) {
 			lose();
 		}
+		// IF LETTER IS &NBSP; EITHER CONVERT IT TO A SPACE, OR CONVERT THE SPACE TO &NBSP;!!
+		// UNLESS THIS WOULD SCREW UP ALL FUTURE GUESSES.
 		else if ( letters.toString() == blanks.toString() ) {
 			win();
 		}
-		// else {
-		// 	// Continue playing.
-		// }
+
 	}
 
 	// Start Game onClick:
@@ -192,16 +200,7 @@ $( document ).ready( function() {
 			checkWin();
 
 		}
-	
-	// roundComplete();
 
 	};
 
-
-
-
-
-
-	
-	
 });
