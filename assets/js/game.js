@@ -97,15 +97,19 @@ $( document ).ready( function() {
 	var checkLetters = function( letter ) {
 
 		var correctLetter = false;
+		console.log( "1. correctLetter set to: " + correctLetter );
 
 		for ( var i = 0; i < letters.length; i++ ) {
 			if ( letters[ i ] == letter ) {
 				correctLetter = true;
-				console.log( "correctLetter = " + correctLetter + ": "+ letter );
+				console.log( "2. correctLetter set to " + correctLetter + ": "+ letter );
 			}
 		}
 
+		console.log( "3. After correctLetter has been found during the initial for loop, correctLetter is set to: " + correctLetter);
+
 		if ( correctLetter ) {
+			console.log( "4. Beginning second for loop because correctLetter is set to: " + correctLetter );
 			for ( var i = 0; i < letters.length; i++ ) {
 				if ( letters[ i ] = letter ) {
 					blanks[ i ] = letter;
@@ -123,19 +127,19 @@ $( document ).ready( function() {
 
 	}
 
-	var win = function() {
-		active = false;
-		winCounter++;
-		document.getElementById( "winDisplay" ).innerHTML = winCounter;
-		confirm( "You got it! Congratulations! Would you like to play another round?" );
-	}
+	// var win = function() {
+	// 	active = false;
+	// 	winCounter++;
+	// 	document.getElementById( "winDisplay" ).innerHTML = winCounter;
+	// 	confirm( "You got it! Congratulations! Would you like to play another round?" );
+	// }
 
-	var lose = function() {
-		active = false;
-		lossCounter++;
-		document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
-		confirm( "Sorry, you're out of guesses. Would you like to play again?" );
-	}
+	// var lose = function() {
+	// 	active = false;
+	// 	lossCounter++;
+	// 	document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
+	// 	confirm( "Sorry, you're out of guesses. Would you like to play again?" );
+	// }
 
 	// var checkWin = function() {
 	// 	if ( guessesLeft == 0 ) {
