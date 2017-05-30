@@ -102,17 +102,17 @@ $( document ).ready( function() {
 		console.log( "2. correctLetter variable has been declared and set to: " + correctLetter );
 
 		for ( var i = 0; i < letters.length; i++ ) {
-			console.log( "3. Running for loop to see if letters[ i ] == letter." );
+			console.log( "3. Running for loop to see if letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + ")." );
 			if ( letters[ i ] == letter ) {
 				correctLetter = true;
-				console.log( "4. letters[ i ] (" + letters[ i ] + ") == letter (" + letter + ", so correctLetter has been set to " + correctLetter + "." );
+				console.log( "4. letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + "), so correctLetter has been set to: " + correctLetter + "." );
 			}
 		}
 
 		console.log( "5. Initial for loop has finished. correctLetter is currently set to: " + correctLetter);
 
 		if ( correctLetter ) {
-			console.log( "4. Beginning second for loop because correctLetter is set to: " + correctLetter );
+			console.log( "6. Beginning second for loop because correctLetter is set to: " + correctLetter );
 			for ( var i = 0; i < letters.length; i++ ) {
 				if ( letters[ i ] = letter ) {
 					blanks[ i ] = letter;
