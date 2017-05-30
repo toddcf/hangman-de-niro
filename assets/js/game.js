@@ -9,7 +9,7 @@ $( document ).ready( function() {
 	}) ();
 
 	var titles = [
-		"ANALYZE THIS",
+		/*"ANALYZE THIS",
 		"ANALYZE THAT",
 		"AWAKENINGS",
 		"BACKDRAFT",
@@ -22,9 +22,9 @@ $( document ).ready( function() {
 		"JACKIE BROWN",
 		"MEET THE PARENTS",
 		"RAGING BULL",
-		"RONIN",
+		"RONIN",*/
 		"SLEEPERS",
-		"TAXI DRIVER",
+		/*"TAXI DRIVER",
 		"THE DEER HUNTER",
 		"THE FAN",
 		"THE GODFATHER: PART II",
@@ -32,7 +32,7 @@ $( document ).ready( function() {
 		"THE SCORE",
 		"THE UNTOUCHABLES",
 		"THIS BOY'S LIFE",
-		"WHAT JUST HAPPENED"
+		"WHAT JUST HAPPENED"*/
 	];
 
 	var winCounter = 0;
@@ -114,8 +114,11 @@ $( document ).ready( function() {
 		if ( correctLetter ) {
 			console.log( "6. Beginning second for loop because correctLetter is set to: " + correctLetter );
 			for ( var i = 0; i < letters.length; i++ ) {
+				console.log( "7. Checking if letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + ")." );
 				if ( letters[ i ] = letter ) {
-					blanks[ i ] = letter;
+					console.log( "8. letters[ " + i + " ] (" + letters[ i ] + ") does in fact == letter (" + letter + "), so we are going to change blanks[ " + i + " ] (" + blanks[ i ] + ") to match that.");
+					blanks[ i ] = letter; /* THIS IS THE PROBLEM RIGHT HERE. */
+					console.log( "9. blanks[ " + i + " ] (" + blanks[ i ] + ") is now set to: letter (" + letter + ")." );
 				}
 			}
 		}
