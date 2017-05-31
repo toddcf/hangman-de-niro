@@ -39,6 +39,7 @@ $( document ).ready( function() {
 	var lossCounter = 0;
 	var blanks = []; /* An array to store the blanks in. */
 	var letters = []; /* The selectedTitle, split into individual letters and stored in an array. */
+	var vault = []; /* An array to store the letters in WITHOUT changing them for display purposes. */
 	var wrongLetters = [];
 	var guessesLeft = 9;
 	var active = false;
@@ -70,19 +71,24 @@ $( document ).ready( function() {
 			// Push spaces:
 			if ( letters[ i ] === " " ) {
 				blanks.push( "&nbsp;" );
+				vault.push( "&nbsp;" ); /* OR TRY USING MAP() TO LOOP THROUGH THE ARRAY AND RETURN A BRAND NEW ARRAY. */
 			}
 			// Push colon:
 			else if ( letters[ i ] === ":" ) {
 				blanks.push( ":" );
+				vault.push( ":" );
 			}
 			// Push apostrophe:
 			else if ( letters[ i ] === "'" ) {
 				blanks.push( "\'" );
+				vault.push( "\'" );
 			}
 			else {
 				blanks.push( "_" );
+				vault.push( letters[ i ] );
 			}
 		}
+		console.log( "vault after pushing &nbsp; = " + vault );
 
 		// Print to HTML:
 		document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
@@ -175,7 +181,7 @@ $( document ).ready( function() {
 		}
 		// IF LETTER IS &NBSP; EITHER CONVERT IT TO A SPACE, OR CONVERT THE SPACE TO &NBSP;!!
 		// UNLESS THIS WOULD SCREW UP ALL FUTURE GUESSES.
-		else if ( letters.toString() == blanks.toString() ) {
+		else if ( vault.toString() == blanks.toString() ) {
 			win();
 		}
 
