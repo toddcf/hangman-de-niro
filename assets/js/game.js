@@ -66,13 +66,12 @@ $( document ).ready( function() {
 		console.log( "Letters: " + letters );
 		// console.log( letters[ i ] );
 		
-		console.log( "Number of Blanks: " + selectedTitle.length );
 		// Push blanks to blanks array:
 		for ( var i = 0; i < letters.length; i++ ) {
 			// Push spaces:
 			if ( letters[ i ] === " " ) {
 				blanks.push( "&nbsp;" );
-				vault.push( "&nbsp;" ); /* OR TRY USING MAP() TO LOOP THROUGH THE ARRAY AND RETURN A BRAND NEW ARRAY. */
+				vault.push( "&nbsp;" );
 			}
 			// Push colon:
 			else if ( letters[ i ] === ":" ) {
@@ -89,7 +88,6 @@ $( document ).ready( function() {
 				vault.push( letters[ i ] );
 			}
 		}
-		console.log( "vault after pushing &nbsp; = " + vault );
 
 		// Print to HTML:
 		document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
@@ -102,29 +100,18 @@ $( document ).ready( function() {
 
 	var checkLetters = function( letter ) {
 
-		// console.log( "1. The " + letter + " key has been pressed. Running checkLetters function. correctLetter is currently set to: " + correctLetter );
-
 		var correctLetter = false;
-		// console.log( "2. correctLetter variable has been declared and set to: " + correctLetter );
 
 		for ( var i = 0; i < letters.length; i++ ) {
-			// console.log( "3. Running for loop to see if letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + ")." );
 			if ( letters[ i ] == letter ) {
 				correctLetter = true;
-				// console.log( "4. letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + "), so correctLetter has been set to: " + correctLetter + "." );
 			}
 		}
 
-		// console.log( "5. Initial for loop has finished. correctLetter is currently set to: " + correctLetter);
-
 		if ( correctLetter ) {
-			// console.log( "6. Beginning second for loop because correctLetter is set to: " + correctLetter );
 			for ( var i = 0; i < letters.length; i++ ) {
-				// console.log( "7. Checking if letters[ " + i + " ] (" + letters[ i ] + ") == letter (" + letter + ")." );
 				if ( letters[ i ] == letter ) {
-					// console.log( "8. letters[ " + i + " ] (" + letters[ i ] + ") does in fact == letter (" + letter + "), so we are going to change blanks[ " + i + " ] (" + blanks[ i ] + ") to match that.");
 					blanks[ i ] = letter;
-					// console.log( "9. blanks[ " + i + " ] (" + blanks[ i ] + ") is now set to: letter (" + letter + ")." );
 				}
 			}
 		}
@@ -180,8 +167,7 @@ $( document ).ready( function() {
 		if ( guessesLeft == 0 ) {
 			lose();
 		}
-		// IF LETTER IS &NBSP; EITHER CONVERT IT TO A SPACE, OR CONVERT THE SPACE TO &NBSP;!!
-		// UNLESS THIS WOULD SCREW UP ALL FUTURE GUESSES.
+		
 		else if ( vault.toString() == blanks.toString() ) {
 			win();
 		}
@@ -198,7 +184,6 @@ $( document ).ready( function() {
 		if ( ( event.keyCode >= 65 ) && ( event.keyCode <= 90 ) && ( active ) ) {
 			// Make uppercase:
 			var userGuess = String.fromCharCode( event.keyCode ).toUpperCase();
-			// console.log( "userGuess: " + userGuess );
 
 			// Check if userGuess was correct.
 			checkLetters( userGuess );
