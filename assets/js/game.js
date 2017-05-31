@@ -101,6 +101,8 @@ $( document ).ready( function() {
 	var checkLetters = function( letter ) {
 
 		// FIRST, check if letter has already been guessed.
+			// Check blanks.
+			// Check wrongLetters.
 		// If it has, shake that letter in the display and turn it red temporarily.
 		// If it hasn't, proceed with the code below:
 
