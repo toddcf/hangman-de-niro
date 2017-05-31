@@ -40,6 +40,12 @@ body {
     /*background-color: #555;*/
 }
 
+h1,
+h2,
+h3 {
+	line-height: 150%;
+}
+
 h1 {
 	margin-left: 50px;
 	font-weight: 300;
