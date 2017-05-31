@@ -10,29 +10,29 @@ $( document ).ready( function() {
 
 	var titles = [
 		"ANALYZE THIS",
-		// "ANALYZE THAT",
-		// "AWAKENINGS",
-		// "BACKDRAFT",
-		// "CAPE FEAR",
-		// "CASINO",
-		// "COP LAND",
-		// "GOODFELLAS",
-		// "GREAT EXPECTATIONS",
-		// "HEAT",
-		// "JACKIE BROWN",
-		// "MEET THE PARENTS",
-		// "RAGING BULL",
-		// "RONIN",
-		// "SLEEPERS",
-		// "TAXI DRIVER",
-		// "THE DEER HUNTER",
-		// "THE FAN",
-		// "THE GODFATHER: PART II",
-		// "THE INTERN",
-		// "THE SCORE",
-		// "THE UNTOUCHABLES",
-		// "THIS BOY'S LIFE",
-		// "WHAT JUST HAPPENED"
+		"ANALYZE THAT",
+		"AWAKENINGS",
+		"BACKDRAFT",
+		"CAPE FEAR",
+		"CASINO",
+		"COP LAND",
+		"GOODFELLAS",
+		"GREAT EXPECTATIONS",
+		"HEAT",
+		"JACKIE BROWN",
+		"MEET THE PARENTS",
+		"RAGING BULL",
+		"RONIN",
+		"SLEEPERS",
+		"TAXI DRIVER",
+		"THE DEER HUNTER",
+		"THE FAN",
+		"THE GODFATHER: PART II",
+		"THE INTERN",
+		"THE SCORE",
+		"THE UNTOUCHABLES",
+		"THIS BOY'S LIFE",
+		"WHAT JUST HAPPENED"
 	];
 
 	var winCounter = 0;
@@ -56,6 +56,7 @@ $( document ).ready( function() {
 		guessesLeft = 9;
 		wrongLetters = [];
 		blanks = [];
+		vault = [];
 
 		// Randomly Select Title:
 		selectedTitle = titles[ Math.floor( Math.random() * titles.length ) ];
