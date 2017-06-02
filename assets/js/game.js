@@ -63,8 +63,6 @@ $( document ).ready( function() {
 		console.log( "Selected Title: " + selectedTitle );
 		// Split selectedTitle into individual letters:
 		letters = selectedTitle.split( "" );
-		console.log( "Letters: " + letters );
-		// console.log( letters[ i ] );
 		
 		// Push blanks to blanks array:
 		for ( var i = 0; i < letters.length; i++ ) {
@@ -98,27 +96,13 @@ $( document ).ready( function() {
 
 	};
 
-	// var checkDuplicates = function( letter ) {
-		
-		
-		// else {
-		// 	checkLetters( letter );
-		// }
-
-		// if ( duplicate == false ) {
-		// 	console.log( "No duplicates found. Running checkLetters function.")
-		// 	checkLetters( letter );
-		// }
-	// }
-
 	var checkLetters = function( letter ) {
 
 		var noDuplicate = true;
-		console.log( "wrongLetters before the for loops run: " + wrongLetters );
 
 		for ( var i = 0; i < blanks.length; i++ ) {
 			if ( blanks[ i ] == letter ) {
-				// console.log( blanks[ i ] );
+				
 				noDuplicate = false;
 				// Shake that letter and turn it red temporarily.
 				alert( "You already CORRECTLY guessed the letter " + letter + "." );
@@ -128,7 +112,6 @@ $( document ).ready( function() {
 		if ( noDuplicate ) {
 			for ( var i = 0; i < wrongLetters.length; i++ ) {
 				if ( wrongLetters[ i ] == letter ) {
-					console.log( "wrongLetters during the for loop run: " + wrongLetters );
 					duplicate = true;
 					alert( "You already INCORRECTLY guessed the letter " + letter + "." );
 					return active = true;
@@ -154,8 +137,6 @@ $( document ).ready( function() {
 		else {
 			wrongLetters.push( letter );
 			guessesLeft--;
-			console.log( "correctLetter = " + correctLetter );
-			console.log( "Guesses Left: " + guessesLeft );
 			document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
 			document.getElementById( "wrongLetters" ).innerHTML = wrongLetters;
 		}
@@ -197,9 +178,6 @@ $( document ).ready( function() {
 	};
 
 	var checkWin = function() {
-
-		console.log( "letters.toString() = " + letters.toString() );
-		console.log( "blanks.toString() = " + blanks.toString() );
 		
 		if ( guessesLeft == 0 ) {
 			lose();
