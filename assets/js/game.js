@@ -97,36 +97,43 @@ $( document ).ready( function() {
 
 	};
 
-	var checkDuplicates = function( letter ) {
-		// FIRST, check if letter has already been guessed.
-			// Check blanks.
-			// Check wrongLetters.
-		// If it has, shake that letter in the display and turn it red temporarily.
-		// If it hasn't, proceed with the code below:
+	// var checkDuplicates = function( letter ) {
+	// 	// FIRST, check if letter has already been guessed.
+	// 		// Check blanks.
+	// 		// Check wrongLetters.
+	// 	// If it has, shake that letter in the display and turn it red temporarily.
+	// 	// If it hasn't, proceed with the code below:
 
-		var duplicate = false;
+	// 	var noDuplicate = true;
+	// 	console.log( "wrongLetters before the for loops run: " + wrongLetters );
 
-		for ( var i = 0; i < blanks.length; i++ ) {
-			if ( blanks[ i ] == letter ) {
-				// console.log( blanks[ i ] );
-				duplicate = true;
-				// Shake that letter and turn it red temporarily.
-				alert( "You already CORRECTLY guessed the letter " + letter + "." );
-			}
-			else {
-				for ( var i = 0; i < wrongLetters.length; i++ ) {
-					if ( wrongLetters[ i ] == letter ) {
-						duplicate = true;
-						alert( "You already INCORRECTLY guessed the letter " + letter + "." );
-					}
-				}
-			}
-		}
+	// 	for ( var i = 0; i < blanks.length; i++ ) {
+	// 		if ( blanks[ i ] == letter ) {
+	// 			// console.log( blanks[ i ] );
+	// 			noDuplicate = false;
+	// 			// Shake that letter and turn it red temporarily.
+	// 			alert( "You already CORRECTLY guessed the letter " + letter + "." );
+	// 		}
+	// 	}
 
-		if ( duplicate == false ) {
-			checkLetters( letter );
-		}
-	}
+	// 	if ( noDuplicate ) {
+	// 		for ( var i = 0; i < wrongLetters.length; i++ ) {
+	// 			if ( wrongLetters[ i ] == letter ) {
+	// 				console.log( "wrongLetters during the for loop run: " + wrongLetters );
+	// 				duplicate = true;
+	// 				alert( "You already INCORRECTLY guessed the letter " + letter + "." );
+	// 			}
+	// 		}
+	// 	}
+	// 	else {
+	// 		checkLetters( letter );
+	// 	}
+
+	// 	// if ( duplicate == false ) {
+	// 	// 	console.log( "No duplicates found. Running checkLetters function.")
+	// 	// 	checkLetters( letter );
+	// 	// }
+	// }
 
 	var checkLetters = function( letter ) {
 
