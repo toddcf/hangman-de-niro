@@ -18,16 +18,17 @@ A one-player hangman game built with JavaScript, jQuery, HTML5, and CSS3. Guess 
 
 ## Future Iterations
 
+- Add favicon.
 - Improve CSS3 styling.
   - Center positioning better.
   - Add letter spacing to wrongLetters display.
   - Mobile responsiveness (even though a keyboard is required to play).
 - If player loses round, display what the title was.
 - At end of round, display the full title and score BEFORE the confirm box pops up.
-- Add favicon.
-- Add start button instead of automatically triggering the game upon loading page.
-  - Hide start button when game begins.
-  - Display "Play Again?" button when game ends.
+- Click `Start` button to begin game instead of automatically triggering the game upon loading page.
+  - Hide blanks before `Start` button is pressed.
+  - Hide `Start` button when game begins. Display blanks in its place.
+  - When game ends, display `Play Again?` button instead of confirm box, and hide blanks again.
 - Animate the blanks as they appear.
 - Do not repeat movie titles. Once all movie titles have been used, either:
   - Keep playing indefinitely.
