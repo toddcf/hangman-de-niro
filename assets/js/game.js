@@ -97,24 +97,38 @@ $( document ).ready( function() {
 
 	};
 
-	var checkLetters = function( letter ) {
-
+	var checkDuplicates = function( letter ) {
 		// FIRST, check if letter has already been guessed.
 			// Check blanks.
 			// Check wrongLetters.
 		// If it has, shake that letter in the display and turn it red temporarily.
 		// If it hasn't, proceed with the code below:
 
+		var duplicate = false;
+
 		for ( var i = 0; i < blanks.length; i++ ) {
 			if ( blanks[ i ] == letter ) {
+				// console.log( blanks[ i ] );
+				duplicate = true;
 				// Shake that letter and turn it red temporarily.
-				alert( "You already guessed the letter " + letter + "." );
+				alert( "You already CORRECTLY guessed the letter " + letter + "." );
+			}
+			else {
+				for ( var i = 0; i < wrongLetters.length; i++ ) {
+					if ( wrongLetters[ i ] == letter ) {
+						duplicate = true;
+						alert( "You already INCORRECTLY guessed the letter " + letter + "." );
+					}
+				}
 			}
 		}
 
-		// for ( var i = 0; i < blanks.length; i++ ) {
+		if ( duplicate == false ) {
+			checkLetters( letter );
+		}
+	}
 
-		// }
+	var checkLetters = function( letter ) {
 
 		var correctLetter = false;
 
@@ -203,7 +217,7 @@ $( document ).ready( function() {
 			var userGuess = String.fromCharCode( event.keyCode ).toUpperCase();
 
 			// Check if userGuess was correct.
-			checkLetters( userGuess );
+			checkDuplicates( userGuess );
 
 			// Check if user won:
 			checkWin();
