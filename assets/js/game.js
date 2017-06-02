@@ -104,9 +104,14 @@ $( document ).ready( function() {
 			if ( blanks[ i ] == letter ) {
 				
 				noDuplicate = false;
-				// Shake that letter and turn it red temporarily.
-				alert( "You already CORRECTLY guessed the letter " + letter + "." );
+
 			}
+		}
+
+		// Set this outside the previous for loop so it triggers only once when the letter appears multiple times in the array:
+		if ( noDuplicate == false ) {
+			// Shake that letter and turn it red temporarily.
+			alert( "You already CORRECTLY guessed the letter " + letter + "." );
 		}
 
 		if ( noDuplicate ) {
