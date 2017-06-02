@@ -94,7 +94,6 @@ $( document ).ready( function() {
 		document.getElementById( "winDisplay" ).innerHTML = winCounter;
 		document.getElementById( "lossDisplay" ).innerHTML = lossCounter;
 		document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
-		document.getElementById( "wrongLetters" ).innerHTML = wrongLetters;
 
 	};
 
@@ -105,6 +104,17 @@ $( document ).ready( function() {
 			// Check wrongLetters.
 		// If it has, shake that letter in the display and turn it red temporarily.
 		// If it hasn't, proceed with the code below:
+
+		for ( var i = 0; i < blanks.length; i++ ) {
+			if ( blanks[ i ] == letter ) {
+				// Shake that letter and turn it red temporarily.
+				alert( "You already guessed the letter " + letter + "." );
+			}
+		}
+
+		// for ( var i = 0; i < blanks.length; i++ ) {
+
+		// }
 
 		var correctLetter = false;
 
