@@ -18,7 +18,6 @@ A one-player hangman game built with JavaScript, jQuery, HTML5, and CSS3. Guess 
 
 ## Future Iterations
 
-- Add favicon.
 - Improve CSS3 styling.
   - Center positioning better.
   - Add letter spacing to wrongLetters display.
