@@ -1,10 +1,10 @@
 # Hangman - Robert De Niro Edition
 
-## Checklist
+A one-player hangman game built with JavaScript, jQuery, HTML5, and CSS3. Guess the Robert De Niro movie title!
 
-- Finish styling CSS.
-- Display incorrect letters guessed in HTML.
-  - If the user guesses the same letter twice, use an animation to shake that letter and temporarily change it to red in either the blanks section or the incorrect guesses section.
+## Future Iterations
+
+- Improve CSS3 styling.
 - If player loses round, display what the title was.
 - At end of round, display the full title and score BEFORE the confirm box pops up.
 - Add favicon.
@@ -13,9 +13,9 @@
   - Display "Play Again?" button when game ends.
 - Animate the blanks as they appear.
 - Mobile responsiveness.
-- Is there a way to not repeat array elements?
-  - If so, either set it to not repeat until all titles have been displayed once. Or . . .
-  - Once all have been guessed, inform them that they have beaten the game, and stop.
+- Do not repeat movie titles. Once all movie titles have been used, either:
+  - Keep playing indefinitely.
+  - Congratulate player on beating the game, and stop the game.
 
 ## Technology Used
 
