@@ -127,6 +127,7 @@ $( document ).ready( function() {
 			console.log( "correctLetter = " + correctLetter );
 			console.log( "Guesses Left: " + guessesLeft );
 			document.getElementById( "guessesLeftDisplay" ).innerHTML = guessesLeft;
+			document.getElementById( "wrongLetters" ).innerHTML = wrongLetters;
 		}
 		
 		document.getElementById( "blanks" ).innerHTML = blanks.join( "  " );
