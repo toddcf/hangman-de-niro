@@ -18,12 +18,12 @@ A one-player hangman game built with JavaScript, jQuery, HTML5, and CSS3. Guess 
 
 ## Future Iterations
 
+- At end of round, display the full title and score BEFORE the confirm box pops up.
 - Improve CSS3 styling.
   - Center positioning better.
   - Add letter spacing to wrongLetters display.
   - Mobile responsiveness (even though a keyboard is required to play).
-- If player loses round, display what the title was.
-- At end of round, display the full title and score BEFORE the confirm box pops up.
+- Display movie poster when player either wins or loses.
 - Click `Start` button to begin game instead of automatically triggering the game upon loading page.
   - Hide blanks before `Start` button is pressed.
   - Hide `Start` button when game begins. Display blanks in its place.
