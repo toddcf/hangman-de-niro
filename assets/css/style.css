@@ -20,7 +20,7 @@ body {
 	overflow-x: hidden;
 }
 
-.main-game {
+html {
 	height: 100vh;
 	background-size: cover; /* Show entire image. */
 	/*background-position: center;*/ /* Center the background image */
