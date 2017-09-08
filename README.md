@@ -2,6 +2,8 @@
 
 A one-player hangman game built with JavaScript, jQuery, HTML5, and CSS3. Guess the Robert De Niro movie title!
 
+![Hangman - Robert De Niro Edition](https://github.com/toddcf/hangman-de-niro/blob/master/assets/img/bg1.jpg "Hangman - Robert De Niro Edition")
+
 ## Game Logic
 
 - Randomly selects a Robert De Niro movie title from an array and displays each character as a blank.
